@@ -2,7 +2,6 @@
 .DS_STORE
 .DS_Store
 
-
 # venv
 bin/
 include/
@@ -13,4 +12,11 @@ env/
 venv/
 ENV/
 staticfiles/
+static/
+
+.ENV
+staticfiles
+*.pyc
+*~
+__pycache__
 static/
