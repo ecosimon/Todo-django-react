@@ -32,7 +32,7 @@ export default class CustomModal extends Component {
       <Modal isOpen={true} toggle={toggle}>
         <ModalHeader toggle={toggle}>Todo Item </ModalHeader>
         <ModalBody>
-          <form>
+          <Form>
             <FormGroup>
               <Label for="title">Title</Label>
               <Input
@@ -52,17 +52,26 @@ export default class CustomModal extends Component {
                 onChange={this.handleChange}
                 placeholder="Enter Todo description"
                />
-               Completed
-             </Label>
-           </FormGroup>
-         </Form>
-       </ModalBody>
-       <ModalFooter>
-         <Button color="success" onClick={() => onSave(this.state.activeItem)}>
-           Save
-         </Button>
-       </ModalFooter>
-     </Modal>
-   );
-  }
-}
+              </FormGroup>
+              <FormGroup check>
+                <Label for="completed">
+                  <Input
+                    type="checkbox"
+                    name="completed"
+                    checked={this.state.activeItem.completed}
+                    onChange={this.handleChange}
+                  />
+                  Completed
+                </Label>
+              </FormGroup>
+           </Form>
+         </ModalBody>
+         <ModalFooter>
+          <Button color="success" onClick={() => onSave(this.state.activeItem)}>
+            Save
+          </Button>
+        </ModalFooter>
+      </Modal>
+    );
+   }
+ }
